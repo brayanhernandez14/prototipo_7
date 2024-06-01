@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultorio Médico</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Consultorio Médico</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showHistory()">Consultas</a></li>
+            <li><a href="#" onclick="showChat()">Hablar con un Médico</a></li>
+            <li><a href="#" onclick="showHealthInfo()">Inicio</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="healthInfo">
+            <h2>Cuidados Personales de la Salud</h2>
+            <p>Mantén una dieta equilibrada, haz ejercicio regularmente y descansa lo suficiente. Practica una buena higiene, controla el estrés y visita al médico regularmente. Evita el exceso de alcohol y no fumes. Prioriza el autocuidado y busca equilibrio en tu vida.</p>
+        </div>
+        <div id="chatSection" style="display: none;">
+            <div>
+                <label for="prompt">Pregunta:</label>
+                <input type="text" id="prompt" name="prompt" placeholder="Escribe tu pregunta aquí...">
+                <button onclick="sendPrompt()">Enviar</button>
+            </div>
+            <div id="response">
+                <h2>Respuesta:</h2>
+                <p id="responseText"></p>
+            </div>
+        </div>
+        <div id="history" style="display: none;">
+            <h2>Historial de Consultas</h2>
+            <ul id="historyList"></ul>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function showChat() {
+            document.getElementById("healthInfo").style.display = "none";
+            document.getElementById("chatSection").style.display = "block";
+            document.getElementById("history").style.display = "none";
+        }
+
+        function showHealthInfo() {
+            document.getElementById("healthInfo").style.display = "block";
+            document.getElementById("chatSection").style.display = "none";
+            document.getElementById("history").style.display = "none";
+        }
+    </script>
+</body>
+</html>
+
